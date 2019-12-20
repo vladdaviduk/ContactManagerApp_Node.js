@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="ISO-8859-1">
+        <title>Contacts</title>
+    </head>
+
+    <script src="../js/lib/angular.min.js"></script>
+    <script src="../js/lib/ui-bootstrap-tpls-2.5.0.min.js"></script>
+    <script src="../js/app/app.js"></script>
+    <script src="../js/app/ContactController.js"></script>
+    <script src="../js/app/ContactService.js"></script>
+    <link rel="stylesheet" href="../css/app.css"/>
+
+    <!-- Bootstrap service CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+            integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+            crossorigin="anonymous"></script>
+
+    <body ng-app="demo" class="bg-secondary">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand  mb-0 h1" href="/views/index.html">Contacts</a>
+        </nav>
+        <hr/>
+        <div class="container jumbotron" ng-controller="ContactController">
+            <form ng-submit="submitContact()">
+                <h1 class="form-signin-heading">{{contactForm.id == 0 && ' ' || contactForm.id }}</h1>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputFirstName">First name</label>
+                        <input ng-model="contactForm.firstName" type="text" class="form-control" id="inputFirstName" placeholder="First name" maxlength="15" required>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputLastName">Last name</label>
+                        <input ng-model="contactForm.lastName" type="text" class="form-control" id="inputLastName" placeholder="Last name" maxlength="15" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputPhone">Phone</label>
+                        <input ng-model="contactForm.phoneNumber" type="tel" class="form-control" id="inputPhone" placeholder="Phone" maxlength="15" required>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputCellphone">Cellphone</label>
+                        <input ng-model="contactForm.cellPhoneNumber" type="tel" class="form-control" id="inputCellphone" placeholder="Cellphone" maxlength="15" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <a class="text-center">Address</a>
+                    <input ng-model="contactForm.address" type="text" class="form-control" placeholder="Address" required>
+                </div>
+                <button class="btn btn-lg btn-outline-info" type="submit">Submit</button>
+                <button class="btn btn-lg btn-outline-info" ng-click="createContact()">New</button>
+            </form>
+
+            <br/>
+            <hr/>
+            <div class="{{allContacts.length > 4 && 'scroll' || ' ' }}" data-spy="scroll" data-offset="0">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th class="text-center">ID</th>
+                        <th class="text-center">Name</th>
+                        <th class="text-center">Phone</th>
+                    </tr>
+                    <tr ng-repeat="contact in allContacts">
+                        <td class="text-center">{{ contact.id }}</td>
+                        <td class="text-center">{{ contact.fullName }}</td>
+                        <td class="text-center">{{ contact.phoneNumber }}</td>
+                        <td>
+                            <button ng-click="getContactToEditing(contact)" type="button" class="btn btn-primary">Edit</button>
+                        </td>
+                        <td>
+                            <button ng-click="deleteContact(contact)" type="button" class="btn btn-danger">Delete</button>
+                        </td>
+                    </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+        <div class="footer left-footer">
+            <p> IGM 2020</p>
+        </div>
+    </body>
+</html>

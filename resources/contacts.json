@@ -1,0 +1,33 @@
+[
+  {
+    "firstName" : "Vlad",
+    "lastName" : "Davidiuk",
+    "phoneNumber" : "380631149176",
+    "cellPhoneNumber" : "04124607266",
+    "address" : "Pravdy pr. 33"
+  },{
+  "firstName" : "Oleg",
+  "lastName" : "Davidiuk",
+  "phoneNumber" : "380631141488",
+  "cellPhoneNumber" : "044460727",
+  "address" : "Berdichivska str. 41"
+},{
+  "firstName" : "Andriy",
+  "lastName" : "Sitnik",
+  "phoneNumber" : "380671442376",
+  "cellPhoneNumber" : "0441237676",
+  "address" : "Obolonskiy pr. 12"
+},{
+  "firstName" : "Ulia",
+  "lastName" : "Timchenko",
+  "phoneNumber" : "0667773344",
+  "cellPhoneNumber" : "0412220716",
+  "address" : "Malinovskogo 11"
+},{
+  "firstName" : "Viktoria",
+  "lastName" : "Luckova",
+  "phoneNumber" : "0951448822",
+  "cellPhoneNumber" : "4152203",
+  "address" : "Geroev stalingrada str. 7a"
+}
+]
