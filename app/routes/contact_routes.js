@@ -1,4 +1,3 @@
-// const Array = require("collections/array");
 const Contact = require('../model/contact');
 
 module.exports = function(app, contacts) {
