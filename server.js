@@ -26,4 +26,5 @@ for(let i=0;i<contactsJson.length;i++){
 
 require('./app/routes')(app, contacts);
 
-app.listen(port, () => console.log(`Hello world app listening on port ${port}!`))
+module.exports = app.listen(port, () => console.log(`Hello world app listening on port ${port}!`));
+
