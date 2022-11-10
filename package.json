@@ -15,6 +15,6 @@
     "chai-http": "^4.3.0",
     "collections": "^5.1.9",
     "express": "^4.17.1",
-    "mocha": "^6.2.2"
+    "mocha": "^10.1.0"
   }
 }
